@@ -3,14 +3,16 @@ services:
     build: .
     command: npm test
     volumes:
-      - .:/app
+      - ./app:/app
     depends_on:
       - mongo
       - redis
     environment:
       - MONGO_URI=mongodb://mongo:27017/mydatabase
       - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - REDIS_PORT=6374
+    ports:
+      - "3001:3000"
 
   mongo:
     image: mongo:latest
@@ -20,4 +22,4 @@ services:
   redis:
     image: redis:latest
     ports:
-      - "6379:6379"
+      - "6374:6379"
