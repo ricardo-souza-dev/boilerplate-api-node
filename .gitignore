@@ -33,8 +33,6 @@ coverage/
 
 # Arquivos do Docker
 *.dockerignore
-Dockerfile
-docker-compose.yml
 
 # Arquivos de sistema
 .DS_Store

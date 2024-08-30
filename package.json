@@ -16,11 +16,12 @@
         "express": "^4.19.2",
         "helmet": "^7.1.0",
         "mongoose": "^8.6.0",
-        "redis": "^4.7.0"
+        "redis": "^4.7.0",
+        "simple-update-notifier": "^2.0.0"
     },
     "devDependencies": {
         "jest": "^29.7.0",
-        "nodemon": "^2.0.18",
+        "nodemon": "^3.1.4",
         "supertest": "^7.0.0"
     }
 }
