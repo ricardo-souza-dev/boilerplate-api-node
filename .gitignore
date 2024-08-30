@@ -1,0 +1,62 @@
+# Node modules
+/node_modules/
+
+# Dependências e lockfiles
+package-lock.json
+yarn.lock
+
+# Arquivos de configuração do IDE
+.vscode/
+.idea/
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de log
+*.log
+
+# Diretórios de cache
+/.cache/
+/tmp/
+/logs/
+
+# Arquivos de build
+/dist/
+/build/
+
+# Arquivos de teste
+coverage/
+
+# Arquivos de banco de dados
+*.sqlite
+*.db
+
+# Arquivos do Docker
+*.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados por ferramentas de desenvolvimento
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs_analysis.dat
+*.vscode
+*.history
+*.git
+
+# Outras configurações específicas
+*.pid
+*.seed
+*.swp
+*.swo
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.backup

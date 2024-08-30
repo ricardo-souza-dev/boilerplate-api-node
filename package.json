@@ -1,0 +1,26 @@
+{
+    "name": "meu-projeto-node",
+    "version": "1.0.0",
+    "description": "Uma API de catálogo usando Node.js, Express, MongoDB e Redis",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "jest"
+    },
+    "author": "Ricardo Souza",
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "helmet": "^7.1.0",
+        "mongoose": "^8.6.0",
+        "redis": "^4.7.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "nodemon": "^2.0.18",
+        "supertest": "^7.0.0"
+    }
+}
