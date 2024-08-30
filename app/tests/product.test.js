@@ -3,10 +3,14 @@ const request = require('supertest');
 const app = require('../index');
 
 describe('GET /api/products', () => {
-  it('deve retornar todos os produtos', async () => {
+  it('deve retornar todos os produtos com paginação', async () => {
     const res = await request(app).get('/api/products');
     expect(res.statusCode).toBe(200);
-    expect(res.body).toBeInstanceOf(Array);
+    expect(res.body).toHaveProperty('products');
+    expect(res.body.products).toBeInstanceOf(Array);
+    expect(res.body).toHaveProperty('totalPages');
+    expect(res.body).toHaveProperty('currentPage');
+    expect(res.body).toHaveProperty('totalProducts');
   });
 });
 
