@@ -5,25 +5,19 @@ const { validationResult } = require('express-validator');
 
 exports.getProducts = async (req, res) => {
   try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 2;
 
-    // Pega parâmetros de consulta
-    const page = parseInt(req.query.page) || 1; // Página atual
-    const limit = parseInt(req.query.limit) || 2; // Número de produtos por página
-
-    // Valida se os parâmetros são números positivos
     if (page < 1 || limit < 1) {
       return res.status(400).json({ message: 'Os parâmetros de página e limite devem ser números positivos' });
     }
 
-    // Calcula o número de documentos a pular
     const skip = (page - 1) * limit;
 
-    // Faz a consulta com paginação
     const products = await Product.find()
       .skip(skip)
       .limit(limit);
 
-    // Conta o total de produtos para a paginação
     const totalProducts = await Product.countDocuments();
 
     res.json({
@@ -37,7 +31,6 @@ exports.getProducts = async (req, res) => {
   }
 };
 
-// productController.js
 exports.getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -49,7 +42,6 @@ exports.getProductById = async (req, res) => {
 };
 
 exports.createProduct = async (req, res) => {
-  // Validar os dados de entrada
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -69,7 +61,6 @@ exports.deleteProduct = async (req, res) => {
   const { id } = req.params;
 
   try {
-    // Encontrar e excluir o produto pelo ID
     const result = await Product.findByIdAndDelete(id);
 
     if (!result) {
