@@ -1,8 +1,14 @@
 // index.js
 const express = require('express');
 const connectDB = require('./config/db');
+const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
 const app = express();
+
+// Permitir requisições de http://localhost:3000
+app.use(cors({
+  origin: 'http://localhost:3000', // Substitua com a origem correta
+}));
 
 // Conectar ao MongoDB
 connectDB();
